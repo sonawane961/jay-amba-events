@@ -1,0 +1,24 @@
+.eventsContainer {
+    text-align: center;
+    width: 100px;
+    margin: 20px;
+    cursor: pointer;
+  
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; // Makes the image circular
+      object-fit: cover; // Ensures the image covers the container
+    }
+  
+    p {
+      margin-top: 10px; // Adds some space between the image and the title
+      font-size: 14px;
+      color: #333; // Adjust as needed
+      width: 100%;
+      font-size: 1.2em;
+      font-weight: bold;
+      font-family:Arial, Helvetica, sans-serif
+    }
+  }
+  
