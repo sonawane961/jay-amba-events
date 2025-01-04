@@ -6,11 +6,13 @@ import Carousel from "@/components/carousel/Carousel";
 import { useEffect, useState } from "react";
 import Events from "@/components/events/events";
 import Packagecard from "@/components/packageCard/packagecard";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [carouselImageArray, setcarouselImageArray] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     let arr = [];
@@ -20,12 +22,20 @@ export default function Home() {
     setcarouselImageArray(arr);
   }, []);
 
+  const routeToWeddingPage = () => {
+    router.push("/wedding");
+  };
+
   return (
     <>
       <Carousel images={carouselImageArray} />
       <p className={styles.eventHeading}>Event Decorations We Offer</p>
       <div className={styles.eventcardsContainer}>
-        <Events imageSrc={"/eventimages/wedding.png"} title={"WEDDING"} />
+        <Events
+          imageSrc={"/eventimages/wedding.png"}
+          title={"WEDDING"}
+          onClick={routeToWeddingPage}
+        />
         <Events imageSrc={"/eventimages/birthday.png"} title={"Birthday"} />
         <Events imageSrc={"/eventimages/babyshower.png"} title={"Babyshower"} />
         <Events imageSrc={"/eventimages/ganapati.png"} title={"Ganapati"} />
