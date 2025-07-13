@@ -147,7 +147,7 @@ export default function Home() {
       )}
 
       <ImagePreviewModal
-        images={galleryImages.slice(0, 8)}
+        images={galleryImages}
         currentIndex={currentImageIndex}
         isOpen={isModalOpen}
         onClose={closeModal}

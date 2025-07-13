@@ -5,13 +5,13 @@ const ImagePreviewModal = ({ images, currentIndex, isOpen, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex || 0);
 
   useEffect(() => {
-    // Clamp the index if images array changes
-    if (currentIndex >= images.length) {
-      setCurrentImageIndex(0);
+    // Only reset to 0 if currentIndex is out of bounds, otherwise always set to currentIndex
+    if (currentIndex < images.length) {
+      setCurrentImageIndex(currentIndex);
     } else {
-      setCurrentImageIndex(currentIndex || 0);
+      setCurrentImageIndex(0);
     }
-  }, [currentIndex, images.length]);
+  }, [currentIndex, images.length, isOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
