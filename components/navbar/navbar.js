@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.scss";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const cartCount = useSelector((state) => state.counter.value);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -15,10 +17,14 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleLogoClick = () => {
+    router.push("/");
+  };
+
   return (
     <div className={styles.dummyContainer}>
       <nav className={styles.navbar}>
-        <div className={styles.navbarLogo}>
+        <div className={styles.navbarLogo} onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
           <img src="/logo.png" alt="Logo" className={styles.logoImage} />
         </div>
         <div className={styles.navbarTitle}>

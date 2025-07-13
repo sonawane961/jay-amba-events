@@ -6,7 +6,7 @@ import {
   removeFromCart,
   clearCart,
 } from "@/store/slices/counterSlice";
-import styles from "../styles/cart.module.scss";
+import styles from "../styles/Kart.module.scss";
 
 const cart = () => {
   const cartItems = useSelector((state) => state.counter.cartItems || []);
