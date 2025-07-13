@@ -32,7 +32,7 @@ const Packagecard = ({ imageSrc, title, rating, price }) => {
           >
             View Details
           </button>
-          <button>Add To Kart</button>
+          <button>Add To cart</button>
         </div>
       </div>
     </>

@@ -3,7 +3,7 @@ import styles from "./icon.module.scss";
 
 const Icon = ({ iconName }) => {
   switch (iconName) {
-    case "ShoppingKart": {
+    case "Shoppingcart": {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"

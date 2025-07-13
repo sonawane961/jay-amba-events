@@ -6,9 +6,9 @@ import {
   removeFromCart,
   clearCart,
 } from "@/store/slices/counterSlice";
-import styles from "../styles/Kart.module.scss";
+import styles from "../styles/cart.module.scss";
 
-const Kart = () => {
+const cart = () => {
   const cartItems = useSelector((state) => state.counter.cartItems || []);
   const dispatch = useDispatch();
 
@@ -191,4 +191,4 @@ const Kart = () => {
   );
 };
 
-export default Kart;
+export default cart;

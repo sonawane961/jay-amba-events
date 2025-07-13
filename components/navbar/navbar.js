@@ -4,7 +4,7 @@ import styles from "./Navbar.module.scss";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const kartCount = useSelector((state) => state.counter.value);
+  const cartCount = useSelector((state) => state.counter.value);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -63,12 +63,12 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
-          <li className={styles.kart}>
-            {kartCount > 0 && (
-              <div className={styles.kart__kartCount}>{kartCount}</div>
+          <li className={styles.cart}>
+            {cartCount > 0 && (
+              <div className={styles.cart__cartCount}>{cartCount}</div>
             )}
-            <Link href="/kart" onClick={closeMobileMenu}>
-              Kart
+            <Link href="/cart" onClick={closeMobileMenu}>
+              cart
             </Link>
           </li>
         </ul>
