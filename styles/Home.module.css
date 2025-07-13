@@ -5,7 +5,18 @@
   /* text-decoration:underline; */
   font-size: 2.5rem;
   color: rgb(92, 96, 100);
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
 }
+
 .eventcardsContainer{
         display: flex;
         justify-content: space-between;
@@ -17,7 +28,27 @@
           flex: 1;
           margin: 0 10px;     
         } */
+        
+        @media (max-width: 768px) {
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+          margin-left: 20px;
+          margin-right: 20px;
+          padding: 0 10px;
+        }
+        
+        @media (max-width: 480px) {
+          flex-direction: row;
+          gap: 10px;
+          margin-left: 5px;
+          margin-right: 5px;
+          overflow-x: auto;
+          white-space: nowrap;
+          flex-wrap: nowrap;
+        }
 }
+
 .grayLine {
     width: 100%;        
     border: none;      
@@ -25,10 +56,65 @@
     background-color: gray;   
     margin: 0;          
 }
+
 .packageCardContainer {
   display: flex;
   flex-wrap: wrap; /* Allows items to wrap onto the next line if they exceed the container's width */
   gap: 10px; /* Adds space between items (you can adjust the value) */
   justify-content: space-between; /* Distributes items with space between them */
   align-items: flex-start; /* Aligns items at the start of the container's cross-axis */
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 15px;
+    padding: 0 10px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 10px;
+    padding: 0 5px;
+  }
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.galleryItem {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(42,89,98,0.07);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.galleryItem:hover {
+  box-shadow: 0 4px 16px rgba(42,89,98,0.13);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+@media (max-width: 600px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .image {
+    height: 120px;
+  }
 }

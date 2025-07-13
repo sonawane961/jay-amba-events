@@ -1,14 +1,39 @@
+
+.dummyContainer{
+  height: 16vh;
+  
+  @media (max-width: 768px) {
+    height: 10vh;
+  }
+  
+  @media (max-width: 480px) {
+    height: 8vh;
+  }
+}
+
 .navbar {
+    position: fixed;
+    z-index: 1000;
     margin-top: 0;
     padding-top: 0;
-    // width: 100%;
-    height: auto;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     background-color:rgb(42,89,98);
     color: #fff;
+    
+    @media (max-width: 768px) {
+      padding: 5px 10px;
+      flex-wrap: wrap;
+      min-height: 60px;
+    }
+    
+    @media (max-width: 480px) {
+      padding: 3px 8px;
+      min-height: 50px;
+    }
   }
   
   .navbarLogo {
@@ -16,6 +41,14 @@
       height: 100px;
       border-radius: 50%;
       width: auto;
+      
+      @media (max-width: 768px) {
+        height: 40px;
+      }
+      
+      @media (max-width: 480px) {
+        height: 35px;
+      }
     }
   }
   
@@ -25,17 +58,62 @@
       font-size: 1.5rem;
       font-family:'Times New Roman', Times, serif;
       font-style: italic;
+      
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+        max-width: 120px;
+        line-height: 1.2;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 0.8rem;
+        max-width: 100px;
+      }
     }
   }
   
   .navbarMenu {
     list-style: none;
     display: flex;
-    // margin: 0;
-    // padding: 0;
+    margin: 0;
+    padding: 0;
+    
+    @media (max-width: 768px) {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgb(42,89,98);
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      gap: 5px;
+      
+      &.mobileOpen {
+        display: flex;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      padding: 8px 0;
+      gap: 3px;
+    }
   
     li {
       margin-left: 20px;
+      
+      @media (max-width: 768px) {
+        margin: 0;
+        text-align: center;
+        min-width: 60px;
+      }
+      
+      @media (max-width: 480px) {
+        min-width: 50px;
+      }
     }
   
     a {
@@ -45,12 +123,115 @@
       cursor: pointer;
     
       &:hover {
-        // text-decoration: underline;
         background-color: #fff;
         border-radius: 6px;
         color: rgb(42,89,98);
         padding: 5px;
       }
+      
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 8px;
+        font-size: 0.7rem;
+        border-radius: 4px;
+        min-height: 40px;
+        justify-content: center;
+        
+        &:hover {
+          background-color: rgba(255,255,255,0.1);
+          color: #fff;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        padding: 3px 5px;
+        font-size: 0.6rem;
+        min-height: 35px;
+      }
     }
   }
-  
+
+  .mobileIcon {
+    display: none;
+    font-size: 1.2rem;
+    
+    @media (max-width: 768px) {
+      display: block;
+      font-size: 1rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .desktopText {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .kart{
+    position: relative;
+    padding-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @media (max-width: 768px) {
+      padding-right: 0;
+    }
+    
+    &__kartCount{
+      position: absolute;
+      top: -12px;
+      left: 5px;
+      display: flex;
+      background-color: red;
+      width: 15px;
+      height: 15px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: bold;
+      
+      @media (max-width: 768px) {
+        top: -5px;
+        left: 12px;
+        width: 10px;
+        height: 10px;
+        font-size: 0.5rem;
+      }
+      
+      @media (max-width: 480px) {
+        top: -3px;
+        left: 10px;
+        width: 8px;
+        height: 8px;
+        font-size: 0.4rem;
+      }
+    }
+  }
+
+  .mobileMenuButton {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 20px;
+    
+    @media (max-width: 768px) {
+      display: block;
+      font-size: 1.2rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
+  }

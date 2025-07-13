@@ -1,13 +1,17 @@
 import Footer from "@/components/footer/footer";
-import Navbar from "@/components/navbar/navbar";
+import Navbar from "@/components/navbar/Navbar";
+import ContactFloating from "@/components/ContactFloating/ContactFloating";
+import { wrapper } from "@/store/store";
 import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <>
       <Navbar />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
+      <ContactFloating />
       <Footer />
     </>
   );
 }
+export default wrapper.withRedux(App);

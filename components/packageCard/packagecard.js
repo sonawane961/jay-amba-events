@@ -16,12 +16,14 @@ const Packagecard = ({ imageSrc, title, rating, price }) => {
     <>
       <div className={styles.cardContainer}>
         <img src={imageSrc} alt="Img" />
-        <div>
+        <div className={styles.starsRow}>
           {filledStars}
           {emptyStars}
         </div>
-        <p>{title}</p>
-        <p>{price}</p>
+        <div className={styles.cardContent}>
+          <p>{title}</p>
+          <p className={styles.price}>{price}</p>
+        </div>
         <div className={styles.packagecardButtonsContainer}>
           <button
             onClick={() => {

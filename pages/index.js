@@ -11,15 +11,81 @@ import { useRouter } from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [carouselImageArray, setcarouselImageArray] = useState([]);
-  const router = useRouter();
+  const packageData = [
+    // {
+    //   imageSrc: "packageimages/1.png",
+    //   rating: 4,
+    //   title: "Unicorn Naming Ceremony Theme",
+    //   price: "129999/-",
+    // },
+    // {
+    //   imageSrc: "packageimages/1.png",
+    //   rating: 4,
+    //   title: "Unicorn Naming Ceremony Theme",
+    //   price: "129999/-",
+    // },
+    // {
+    //   imageSrc: "packageimages/1.png",
+    //   rating: 4,
+    //   title: "Unicorn Naming Ceremony Theme",
+    //   price: "129999/-",
+    // },
+    {
+      imageSrc: "packageimages/baby_shower.png",
+      rating: 4,
+      title: "Baby Shower Theme",
+      price: "12999/-",
+    },
+    {
+      imageSrc: "packageimages/wedding.jpg",
+      rating: 4,
+      title: "Unicorn wedding Theme",
+      price: "12999/-",
+    },
+    {
+      imageSrc: "packageimages/bal.jpg",
+      rating: 4,
+      title: "balloon decoration Theme",
+      price: "12999/-",
+    },
+    {
+      imageSrc: "packageimages/birthday.jpg",
+      rating: 4,
+      title: "Birthday Theme",
+      price: "12999/-",
+    },
+    // ... repeat or add more as needed
+  ];
 
+  const [carouselImageArray, setcarouselImageArray] = useState([]);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const handlePackageCardAction = (action) => {
+    console.log("ACTION", action);
+  };
   useEffect(() => {
     let arr = [];
     for (let i = 1; i <= 10; i++) {
       arr.push(`/carouselimages/${i}.jpg`);
     }
     setcarouselImageArray(arr);
+  }, []);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/getweddingimg");
+        const data = await response.json();
+        setGalleryImages(data);
+      } catch (error) {
+        setGalleryImages([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchImages();
   }, []);
 
   const routeToWeddingPage = () => {
@@ -40,84 +106,27 @@ export default function Home() {
         <Events imageSrc={"/eventimages/babyshower.png"} title={"Babyshower"} />
         <Events imageSrc={"/eventimages/ganapati.png"} title={"Ganapati"} />
         <Events imageSrc={"/eventimages/aniversary.jpg"} title={"Aniversary"} />
-        <Events imageSrc={"/eventimages/wedding.png"} title={"WEDDING"} />
+        <Events imageSrc={"/eventimages/navaratri.jpg"} title={"Navaratri"} />
       </div>
       <hr className={styles.grayLine} />
       <p className={styles.eventHeading}> Our Packages</p>
-      <div className={styles.packageCardContainer}>
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"129999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"129999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"129999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-        <Packagecard
-          imageSrc={"packageimages/1.png"}
-          rating={4}
-          title={"Unicorn Naming Ceremony Theme"}
-          price={"12999/-"}
-        />
-      </div>
+      {loading ? (
+        <div style={{ textAlign: "center", padding: "32px" }}>
+          Loading images...
+        </div>
+      ) : (
+        <div className={styles.galleryGrid}>
+          {galleryImages?.map((img, idx) => (
+            <div className={styles.galleryItem} key={idx}>
+              <img
+                src={img.url}
+                alt={`Gallery ${idx + 1}`}
+                className={styles.image}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }

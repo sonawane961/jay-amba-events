@@ -41,7 +41,7 @@ const Carousel = ({ images }) => {
           <div className={styles.infoTextdiv}>
             <h2>Our Event Decoration Service</h2>
             <h1>Crafting Joy, One Event at a Time!</h1>
-            <p>
+            {/* <p>
               Welcome to Jay Amba Event And decorations – where every event is a
               celebration of creativity and joy! With a passion for turning
               ordinary moments into extraordinary memories, we specialize in
@@ -49,7 +49,7 @@ const Carousel = ({ images }) => {
               a grand wedding, a corporate gala, or an intimate gathering, we
               bring your vision to life with meticulous planning, vibrant
               decorations, and a touch of magic.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
