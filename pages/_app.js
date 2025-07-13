@@ -1,8 +1,8 @@
 import Footer from "@/components/footer/footer";
-import Navbar from "@/components/navbar/Navbar";
 import ContactFloating from "@/components/ContactFloating/ContactFloating";
 import { wrapper } from "@/store/store";
 import "@/styles/globals.css";
+import Navbar from "@/components/navbar/navbar";
 
 function App({ Component, pageProps }) {
   return (
