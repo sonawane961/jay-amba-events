@@ -36,8 +36,9 @@
 
     @media (max-width: 480px) {
       width: 72px;
-      margin: 8px 4px;
+      margin: 8px 2px;
       padding: 6px 2px 8px 2px;
+      flex-shrink: 0;
       img {
         width: 60px;
         height: 60px;
