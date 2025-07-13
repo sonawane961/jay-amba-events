@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Events from "@/components/events/events";
 import Packagecard from "@/components/packageCard/packagecard";
 import { useRouter } from "next/router";
+import ImagePreviewModal from "@/components/ImagePreviewModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -92,6 +93,18 @@ export default function Home() {
     router.push("/wedding");
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <Carousel images={carouselImageArray} />
@@ -116,8 +129,13 @@ export default function Home() {
         </div>
       ) : (
         <div className={styles.galleryGrid}>
-          {galleryImages?.map((img, idx) => (
-            <div className={styles.galleryItem} key={idx}>
+          {galleryImages.slice(0, 8).map((img, idx) => (
+            <div
+              className={styles.galleryItem}
+              key={idx}
+              onClick={() => handleImageClick(idx)}
+              style={{ cursor: "pointer" }}
+            >
               <img
                 src={img.url}
                 alt={`Gallery ${idx + 1}`}
@@ -127,6 +145,13 @@ export default function Home() {
           ))}
         </div>
       )}
+
+      <ImagePreviewModal
+        images={galleryImages.slice(0, 8)}
+        currentIndex={currentImageIndex}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </>
   );
 }

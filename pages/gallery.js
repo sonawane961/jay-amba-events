@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/Gallery.module.css";
+import ImagePreviewModal from "@/components/ImagePreviewModal";
 
 const Gallery = () => {
   const [galleryImages, setGalleryImages] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [loading, setLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const categories = [
     { value: "all", label: "All Images" },
@@ -50,6 +53,15 @@ const Gallery = () => {
     setSelectedCategory(e.target.value);
   };
 
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={styles.galleryPage}>
       <h1 className={styles.heading}>Image Gallery</h1>
@@ -76,7 +88,12 @@ const Gallery = () => {
 
       <div className={styles.galleryGrid}>
         {galleryImages?.map((img, idx) => (
-          <div className={styles.galleryItem} key={idx}>
+          <div
+            className={styles.galleryItem}
+            key={idx}
+            onClick={() => handleImageClick(idx)}
+            style={{ cursor: "pointer" }}
+          >
             <img
               src={img.url || img}
               alt={`Gallery ${idx + 1}`}
@@ -85,6 +102,13 @@ const Gallery = () => {
           </div>
         ))}
       </div>
+
+      <ImagePreviewModal
+        images={galleryImages}
+        currentIndex={currentImageIndex}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </div>
   );
 };
