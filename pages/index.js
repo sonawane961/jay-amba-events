@@ -129,7 +129,7 @@ export default function Home() {
         </div>
       ) : (
         <div className={styles.galleryGrid}>
-          {galleryImages.slice(0, 8).map((img, idx) => (
+          {galleryImages?.map((img, idx) => (
             <div
               className={styles.galleryItem}
               key={idx}
