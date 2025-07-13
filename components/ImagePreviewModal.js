@@ -5,8 +5,13 @@ const ImagePreviewModal = ({ images, currentIndex, isOpen, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(currentIndex || 0);
 
   useEffect(() => {
-    setCurrentImageIndex(currentIndex || 0);
-  }, [currentIndex]);
+    // Clamp the index if images array changes
+    if (currentIndex >= images.length) {
+      setCurrentImageIndex(0);
+    } else {
+      setCurrentImageIndex(currentIndex || 0);
+    }
+  }, [currentIndex, images.length]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -33,7 +38,7 @@ const ImagePreviewModal = ({ images, currentIndex, isOpen, onClose }) => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || !images.length) return null;
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
@@ -47,6 +52,7 @@ const ImagePreviewModal = ({ images, currentIndex, isOpen, onClose }) => {
             src={images[currentImageIndex]?.url || images[currentImageIndex]}
             alt={`Image ${currentImageIndex + 1}`}
             className={styles.previewImage}
+            onError={(e) => (e.target.style.display = "none")}
           />
         </div>
 
@@ -55,7 +61,7 @@ const ImagePreviewModal = ({ images, currentIndex, isOpen, onClose }) => {
             ‹
           </button>
           <span className={styles.imageCounter}>
-            {currentImageIndex + 1} / {images.length}
+            {Math.min(currentImageIndex + 1, images.length)} / {images.length}
           </span>
           <button className={styles.navButton} onClick={nextImage}>
             ›

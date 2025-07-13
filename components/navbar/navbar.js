@@ -24,7 +24,11 @@ const Navbar = () => {
   return (
     <div className={styles.dummyContainer}>
       <nav className={styles.navbar}>
-        <div className={styles.navbarLogo} onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
+        <div
+          className={styles.navbarLogo}
+          onClick={handleLogoClick}
+          style={{ cursor: "pointer" }}
+        >
           <img src="/logo.png" alt="Logo" className={styles.logoImage} />
         </div>
         <div className={styles.navbarTitle}>
@@ -74,7 +78,7 @@ const Navbar = () => {
               <div className={styles.cart__cartCount}>{cartCount}</div>
             )}
             <Link href="/cart" onClick={closeMobileMenu}>
-              cart
+              Cart
             </Link>
           </li>
         </ul>
