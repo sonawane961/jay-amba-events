@@ -1,0 +1,224 @@
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    
+    @media (max-width: 768px) {
+      padding: 30px 15px;
+    }
+    
+    @media (max-width: 480px) {
+      padding: 20px 10px;
+    }
+  
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      @media (max-width: 768px) {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      @media (max-width: 480px) {
+        gap: 10px;
+      }
+    }
+  
+    .brandSection {
+      flex: 1;
+      min-width: 200px;
+      
+      @media (max-width: 768px) {
+        flex: none;
+        width: 100%;
+        min-width: auto;
+      }
+  
+      h2 {
+        font-size: 1.8rem;
+        color: #ff99cc;
+        
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 1.2rem;
+        }
+      }
+  
+      p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        max-width: 300px;
+        
+        @media (max-width: 768px) {
+          max-width: 100%;
+          font-size: 0.85rem;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  
+    .quickLinks, .contactInfo, .socialMedia {
+      flex: 1;
+      min-width: 150px;
+      
+      @media (max-width: 768px) {
+        flex: none;
+        width: 100%;
+        min-width: auto;
+      }
+  
+      h3 {
+        color: #ff99cc;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        
+        @media (max-width: 768px) {
+          font-size: 1.1rem;
+          margin-bottom: 8px;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 1rem;
+          margin-bottom: 6px;
+        }
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+        
+        @media (max-width: 768px) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+        }
+  
+        li {
+          margin: 5px 0;
+          
+          @media (max-width: 768px) {
+            margin: 0;
+          }
+  
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            
+            @media (max-width: 768px) {
+              font-size: 0.85rem;
+            }
+            
+            @media (max-width: 480px) {
+              font-size: 0.8rem;
+            }
+  
+            &:hover {
+              color: #ff99cc;
+            }
+          }
+        }
+      }
+  
+      p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        
+        @media (max-width: 768px) {
+          font-size: 0.85rem;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  
+    .socialIcons {
+      display: flex;
+      gap: 10px;
+      
+      @media (max-width: 768px) {
+        justify-content: center;
+        gap: 15px;
+      }
+  
+      a {
+        font-size: 1.5rem;
+        color: #fff;
+        transition: color 0.3s;
+        
+        @media (max-width: 768px) {
+          font-size: 1.3rem;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 1.1rem;
+        }
+  
+        &:hover {
+          color: #ff99cc;
+        }
+      }
+    }
+  
+    .newsletter {
+      text-align: center;
+      margin: 30px 0;
+  
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+  
+      form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+  
+        input {
+          padding: 10px;
+          font-size: 0.9rem;
+          border: none;
+          border-radius: 4px;
+        }
+  
+        button {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+          background-color: #ff99cc;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          border-radius: 4px;
+  
+          &:hover {
+            background-color: #e68aab;
+          }
+        }
+      }
+    }
+  
+    .copyright {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  }
+  

@@ -1,0 +1,122 @@
+.cardContainer {
+  margin: 16px;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 350px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  }
+
+  img {
+    width: 100%;
+    height: 220px;
+    border-radius: 16px 16px 0 0;
+    object-fit: cover;
+    background: #f3f3f3;
+    border-bottom: 1px solid #eee;
+  }
+
+  .starsRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    margin: 12px 0 0 0;
+    min-height: 28px;
+  }
+
+  .cardContent {
+    width: 100%;
+    padding: 16px 12px 0 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  p {
+    margin: 0;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: 500;
+    word-break: break-word;
+  }
+
+  .price {
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .packagecardButtonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 0 20px 0;
+    background: #fafbfc;
+    border-top: 1px solid #eee;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: background 0.2s, transform 0.2s;
+    outline: none;
+    margin: 0;
+    &:hover {
+      background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+      transform: translateY(-2px) scale(1.04);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .cardContainer {
+    flex: 1 1 45%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardContainer {
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 12px 0;
+    img {
+      height: 160px;
+    }
+  }
+}
+
+.packagecardButtonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 0 20px 0;
+  background: #fafbfc;
+  border-top: 1px solid #eee;
+}
