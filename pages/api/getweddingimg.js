@@ -4,8 +4,12 @@ async function handler(req, res) {
   try {
     // Wait for the MongoDB client to connect
     const client = await clientPromise;
-    const db = client.db(); // Get the default database
-    const imagesCollection = db.collection("images"); // Access the "images" collection
+
+    // Specify the correct database
+    const db = client.db("cloudinary_uploads"); // Use your actual database name
+
+    // Access the "images" collection
+    const imagesCollection = db.collection("images");
 
     // Fetch the images from MongoDB
     const images = await imagesCollection.find().toArray();
