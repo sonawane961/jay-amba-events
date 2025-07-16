@@ -3,6 +3,7 @@ import styles from "../styles/Gallery.module.css";
 import ImagePreviewModal from "@/components/ImagePreviewModal";
 
 const Gallery = () => {
+  const [allImages, setAllImages] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [loading, setLoading] = useState(false);
@@ -12,43 +13,46 @@ const Gallery = () => {
   const categories = [
     { value: "all", label: "All Images" },
     { value: "ballod-decoration", label: "Balloon decoration" },
-    { value: "wedding", label: "Wedding" },
-    { value: "haldi", label: "Haldi" },
-    { value: "birthday", label: "Birthday" },
-    { value: "corporate", label: "Corporate" },
-    { value: "babyshower", label: "Baby Shower" },
-    { value: "ganapati", label: "Ganapati" },
-    { value: "anniversary", label: "Anniversary" },
-    { value: "navaratri", label: "Navaratri" },
+    { value: "wedding-decoration", label: "Wedding" },
+    { value: "haldi-decoration", label: "Haldi" },
+    { value: "birthday-decoration", label: "Birthday" },
+    { value: "corporate-decoration", label: "Corporate" },
+    { value: "babyshower-decoration", label: "Baby Shower" },
+    { value: "ganapati-decoration", label: "Ganapati" },
+    { value: "anniversary-decoration", label: "Anniversary" },
+    { value: "navaratri-decoration", label: "Navaratri" },
   ];
 
+  // Fetch once on mount
   useEffect(() => {
-    fetchImages();
-  }, [selectedCategory]);
-
-  const fetchImages = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch("/api/getweddingimg");
-      const data = await response.json();
-      console.log(data);
-
-      if (selectedCategory === "all") {
-        setGalleryImages(data);
-      } else {
-        // Filter images based on selected category
-        const filteredImages = data.filter(
-          (img) => img.urlType?.toLowerCase() === selectedCategory
-          // img.url?.toLowerCase().includes(selectedCategory)
-        );
-        setGalleryImages(filteredImages);
+    const fetchImages = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/getweddingimg");
+        const data = await response.json();
+        setAllImages(data);
+        setGalleryImages(data); // initially show all
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      console.error("Error fetching images:", error);
-    } finally {
-      setLoading(false);
+    };
+
+    fetchImages();
+  }, []);
+
+  // Filter when category changes
+  useEffect(() => {
+    if (selectedCategory === "all") {
+      setGalleryImages(allImages);
+    } else {
+      const filtered = allImages.filter(
+        (img) => img.urlType?.toLowerCase() === selectedCategory
+      );
+      setGalleryImages(filtered);
     }
-  };
+  }, [selectedCategory, allImages]);
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
@@ -74,7 +78,7 @@ const Gallery = () => {
         <select
           id="categorySelect"
           value={selectedCategory}
-          onChange={handleCategoryChange}
+        onChange={handleCategoryChange}
           className={styles.categorySelect}
         >
           {categories.map((category) => (

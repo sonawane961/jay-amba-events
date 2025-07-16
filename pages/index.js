@@ -79,13 +79,19 @@ export default function Home() {
       try {
         const response = await fetch("/api/getweddingimg");
         const data = await response.json();
-        setGalleryImages(data);
+        // Shuffle the array
+        const shuffled = data.sort(() => 0.5 - Math.random());
+        // Get first 20
+        const random20 = shuffled.slice(0, 20);
+        setGalleryImages(random20);
       } catch (error) {
+        console.error("Failed to fetch images", error);
         setGalleryImages([]);
       } finally {
         setLoading(false);
       }
     };
+
     fetchImages();
   }, []);
 
