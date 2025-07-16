@@ -13,6 +13,7 @@ const Gallery = () => {
     { value: "all", label: "All Images" },
     { value: "ballod-decoration", label: "Balloon decoration" },
     { value: "wedding", label: "Wedding" },
+    { value: "haldi", label: "Haldi" },
     { value: "birthday", label: "Birthday" },
     { value: "corporate", label: "Corporate" },
     { value: "babyshower", label: "Baby Shower" },
