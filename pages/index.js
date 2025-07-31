@@ -67,8 +67,22 @@ export default function Home() {
   };
   useEffect(() => {
     let arr = [];
+    // Define the correct file extensions for each image
+    const imageExtensions = {
+      1: "JPG",
+      2: "jpg",
+      3: "jpg",
+      4: "JPG",
+      5: "jpg",
+      6: "jpg",
+      7: "jpg",
+      8: "jpg",
+      9: "jpg",
+      10: "jpg",
+    };
+
     for (let i = 1; i <= 10; i++) {
-      arr.push(`/carouselimages/${i}.jpg`);
+      arr.push(`/carouselimages/${i}.${imageExtensions[i]}`);
     }
     setcarouselImageArray(arr);
   }, []);
