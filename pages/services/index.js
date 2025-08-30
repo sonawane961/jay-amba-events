@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../styles/Services.module.css";
+import styles from "../../styles/Services.module.scss";
 
 const services = [
   { name: "Event Planning & Management", slug: "event-planning-management" },

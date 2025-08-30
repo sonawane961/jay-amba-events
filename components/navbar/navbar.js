@@ -60,7 +60,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link href="/shopping" onClick={closeMobileMenu}>
-              Shopping
+              Events
             </Link>
           </li>
           <li>

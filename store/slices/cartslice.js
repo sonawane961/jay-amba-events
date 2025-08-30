@@ -5,6 +5,7 @@ const counterSlice = createSlice({
   initialState: {
     value: 0,
     cartItems: [],
+    viewDetailData: {},
   },
   reducers: {
     increment: (state, action) => {
@@ -31,6 +32,7 @@ const counterSlice = createSlice({
     },
     addToCart: (state, action) => {
       const newItem = action.payload;
+      console.log("NEW-ITEM", newItem);
       const existingItem = state.cartItems.find(
         (item) => item.id === newItem.id
       );
@@ -56,6 +58,10 @@ const counterSlice = createSlice({
         state.value -= removedQuantity;
       }
     },
+    viewEventDetails: (state, action) => {
+      console.log("VIEW DETAIL DATA", action.payload);
+      state.viewDetailData = action.payload;
+    },
     clearCart: (state) => {
       state.cartItems = [];
       state.value = 0;
@@ -72,6 +78,7 @@ export const {
   decrement,
   addToCart,
   removeFromCart,
+  viewEventDetails,
   clearCart,
   reset,
 } = counterSlice.actions;

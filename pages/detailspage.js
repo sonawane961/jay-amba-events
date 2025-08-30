@@ -1,5 +1,5 @@
 import React from "react";
-import { increment, decrement } from "@/store/slices/counterSlice";
+import { increment, decrement } from "@/store/slices/cartslice";
 import { useSelector, useDispatch } from "react-redux";
 
 const Details = () => {

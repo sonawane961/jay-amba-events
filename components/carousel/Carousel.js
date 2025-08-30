@@ -77,7 +77,7 @@ const Carousel = ({ images }) => {
         <div className={styles.infoText}>
           <div className={styles.infoTextdiv}>
             <h2>Our Event Decoration Service</h2>
-            <h1>Crafting Joy, One Event at a Time!</h1>
+            <h1>Crafting Joy!</h1>
             {/* <p>
               Welcome to Jay Amba Event And decorations – where every event is a
               celebration of creativity and joy! With a passion for turning

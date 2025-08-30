@@ -1,0 +1,793 @@
+.contactPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f7fa 0%, #e6f0f3 100%);
+  padding: 40px 20px;
+}
+
+.contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contactTitle {
+  font-size: 3rem;
+  color: #2a5962;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(42, 89, 98, 0.1);
+}
+
+.contactSubtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contactInfo {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.infoSection {
+  margin-bottom: 40px;
+}
+
+.infoSection h3 {
+  font-size: 1.5rem;
+  color: #2a5962;
+  font-weight: 600;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #ff99cc;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.infoItem:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.infoIcon {
+  font-size: 1.5rem;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff99cc;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.infoItem h4 {
+  font-size: 1.1rem;
+  color: #2a5962;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.infoItem p {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.socialSection h3 {
+  font-size: 1.5rem;
+  color: #2a5962;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #ff99cc;
+}
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #2a5962;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+  }
+}
+
+.socialLink:hover {
+  background: #ff99cc;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 153, 204, 0.4);
+  
+  svg {
+    transform: scale(1.1);
+  }
+}
+
+.contactForm {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contactForm h3 {
+  font-size: 1.8rem;
+  color: #2a5962;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.successMessage,
+.errorMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.successMessage {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.errorMessage {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.successIcon,
+.errorIcon {
+  font-size: 1.5rem;
+  min-width: 24px;
+}
+
+.successMessage h4,
+.errorMessage h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.successMessage p,
+.errorMessage p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 600;
+  color: #2a5962;
+  font-size: 0.95rem;
+}
+
+.required {
+  color: #dc3545;
+  font-weight: 700;
+}
+
+.input,
+.textarea {
+  padding: 14px 16px;
+  border: 2px solid #e6f0f3;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fff;
+  color: #2a5962;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #ff99cc;
+  box-shadow: 0 0 0 3px rgba(255, 153, 204, 0.1);
+}
+
+.input:hover,
+.textarea:hover {
+  border-color: #2a5962;
+}
+
+.inputError,
+.textareaError {
+  border-color: #dc3545;
+  background: #fff5f5;
+}
+
+.inputError:focus,
+.textareaError:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.errorText {
+  color: #dc3545;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.charCount {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #ff99cc 0%, #ff6b9d 100%);
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 153, 204, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 153, 204, 0.4);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Responsive Design - Mobile First Approach
+@media (max-width: 1200px) {
+  .contactContainer {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contactInfo,
+  .contactForm {
+    padding: 30px;
+  }
+  
+  .contactTitle {
+    font-size: 2.8rem;
+  }
+  
+  .contactSubtitle {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactPage {
+    padding: 30px 16px;
+    min-height: auto;
+  }
+  
+  .contactHeader {
+    margin-bottom: 40px;
+  }
+  
+  .contactTitle {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+  }
+  
+  .contactSubtitle {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+  
+  .contactContent {
+    gap: 30px;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contactInfo,
+  .contactForm {
+    padding: 24px;
+  }
+  
+  .infoItem {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .infoItem h4 {
+    font-size: 1rem;
+  }
+  
+  .infoItem p {
+    font-size: 0.9rem;
+  }
+  
+  .socialLinks {
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .socialLink {
+    width: 45px;
+    height: 45px;
+    
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  .contactForm h3 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+  
+  .submitButton {
+    padding: 14px 28px;
+    font-size: 1rem;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contactPage {
+    padding: 20px 12px;
+  }
+  
+  .contactTitle {
+    font-size: 2.2rem;
+  }
+  
+  .contactSubtitle {
+    font-size: 1rem;
+  }
+  
+  .contactInfo,
+  .contactForm {
+    padding: 20px;
+  }
+  
+  .infoSection h3,
+  .socialSection h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .infoItem {
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  
+  .form {
+    gap: 20px;
+  }
+  
+  .formGroup {
+    gap: 6px;
+  }
+  
+  .label {
+    font-size: 0.9rem;
+  }
+  
+  .input,
+  .textarea {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+  
+  .textarea {
+    min-height: 100px;
+  }
+  
+  .submitButton {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactPage {
+    padding: 16px 8px;
+  }
+  
+  .contactHeader {
+    margin-bottom: 30px;
+  }
+  
+  .contactTitle {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .contactSubtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .contactContent {
+    gap: 24px;
+  }
+  
+  .contactInfo,
+  .contactForm {
+    padding: 18px;
+    border-radius: 12px;
+  }
+  
+  .infoSection h3,
+  .socialSection h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+  }
+  
+  .infoItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .infoItem h4 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  
+  .infoItem p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .socialLinks {
+    gap: 12px;
+    justify-content: center;
+  }
+  
+  .socialLink {
+    width: 42px;
+    height: 42px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  .contactForm h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  
+  .successMessage,
+  .errorMessage {
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .successMessage h4,
+  .errorMessage h4 {
+    font-size: 1rem;
+  }
+  
+  .successMessage p,
+  .errorMessage p {
+    font-size: 0.9rem;
+  }
+  
+  .form {
+    gap: 18px;
+  }
+  
+  .formGroup {
+    gap: 6px;
+  }
+  
+  .label {
+    font-size: 0.85rem;
+  }
+  
+  .input,
+  .textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+  }
+  
+  .textarea {
+    min-height: 90px;
+    rows: 4;
+  }
+  
+  .errorText {
+    font-size: 0.8rem;
+  }
+  
+  .charCount {
+    font-size: 0.75rem;
+    margin-top: 2px;
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    min-height: 44px;
+    border-radius: 6px;
+  }
+  
+  .spinner {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .contactPage {
+    padding: 12px 6px;
+  }
+  
+  .contactTitle {
+    font-size: 1.8rem;
+  }
+  
+  .contactSubtitle {
+    font-size: 0.9rem;
+  }
+  
+  .contactInfo,
+  .contactForm {
+    padding: 16px;
+  }
+  
+  .infoItem {
+    padding: 10px;
+  }
+  
+  .socialLink {
+    width: 38px;
+    height: 38px;
+    
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  .input,
+  .textarea {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .submitButton {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    min-height: 40px;
+  }
+}
+
+// Touch-friendly improvements for mobile
+@media (hover: none) and (pointer: coarse) {
+  .socialLink:hover {
+    transform: none;
+    box-shadow: 0 4px 16px rgba(255, 153, 204, 0.3);
+  }
+  
+  .infoItem:hover {
+    transform: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submitButton:hover:not(:disabled) {
+    transform: none;
+    box-shadow: 0 4px 16px rgba(255, 153, 204, 0.3);
+  }
+  
+  // Increase touch targets
+  .socialLink {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .submitButton {
+    min-height: 48px;
+  }
+  
+  .input,
+  .textarea {
+    min-height: 44px;
+  }
+}
+
+// Landscape mobile optimization
+@media (max-width: 768px) and (orientation: landscape) {
+  .contactPage {
+    padding: 20px 16px;
+  }
+  
+  .contactHeader {
+    margin-bottom: 30px;
+  }
+  
+  .contactTitle {
+    font-size: 2.2rem;
+  }
+  
+  .contactContent {
+    gap: 24px;
+  }
+  
+  .contactInfo,
+  .contactForm {
+    padding: 20px;
+  }
+}
+
+// Additional animations and effects
+.contactPage {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.infoItem,
+.contactForm,
+.contactInfo {
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Enhanced focus states for accessibility
+.input:focus,
+.textarea:focus,
+.submitButton:focus {
+  outline: 2px solid #ff99cc;
+  outline-offset: 2px;
+}
+
+// // Smooth transitions for all interactive elements
+// * {
+//   transition: all 0.2s ease;
+// }
+
+// Loading state enhancements
+.submitButton:disabled .spinner {
+  animation: spin 1s linear infinite;
+}
+
+// Hover effects for info items
+.infoItem:hover .infoIcon {
+  transform: scale(1.1);
+  background: #ff6b9d;
+}
+
+// Form validation visual feedback
+.input:valid:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.input:invalid:not(:placeholder-shown) {
+  border-color: #dc3545;
+}

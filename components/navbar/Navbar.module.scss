@@ -1,12 +1,12 @@
 .dummyContainer {
-  height: 16vh;
+  height: 10vh;
 
   @media (max-width: 768px) {
-    height: 10vh;
+    height: 8vh;
   }
 
   @media (max-width: 480px) {
-    height: 8vh;
+    height: 6vh;
   }
 }
 
@@ -19,35 +19,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 20px;
+  padding: 3px 20px;
   background-color: rgb(42, 89, 98);
   color: #fff;
-  min-height: 60px;
+  min-height: 45px;
 
   @media (max-width: 768px) {
-    padding: 5px 10px;
+    padding: 3px 10px;
     flex-wrap: wrap;
-    min-height: 60px;
+    min-height: 40px;
   }
 
   @media (max-width: 480px) {
-    padding: 3px 8px;
-    min-height: 50px;
+    padding: 2px 8px;
+    min-height: 35px;
   }
 }
 
 .navbarLogo {
   .logoImage {
-    height: 100px;
+    height: 60px;
     border-radius: 50%;
     width: auto;
 
     @media (max-width: 768px) {
-      height: 40px;
+      height: 30px;
     }
 
     @media (max-width: 480px) {
-      height: 35px;
+      height: 25px;
     }
   }
 }
@@ -55,19 +55,19 @@
 .navbarTitle {
   h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: "Times New Roman", Times, serif;
     font-style: italic;
     white-space: nowrap;
 
     @media (max-width: 768px) {
-      font-size: 0.9rem;
-      line-height: 1.2;
+      font-size: 0.8rem;
+      line-height: 1.1;
       white-space: nowrap;
     }
 
     @media (max-width: 480px) {
-      font-size: 1.2rem;
+      font-size: 1rem;
       white-space: nowrap;
     }
   }

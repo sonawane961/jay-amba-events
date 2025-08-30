@@ -5,7 +5,7 @@ import {
   decrement,
   removeFromCart,
   clearCart,
-} from "@/store/slices/counterSlice";
+} from "@/store/slices/cartslice";
 import styles from "../styles/Kart.module.scss";
 
 const cart = () => {
@@ -94,8 +94,8 @@ const cart = () => {
                 <div className={styles.itemFeatures}>
                   <h4>Features:</h4>
                   <ul>
-                    {item.features?.slice(0, 3).map((feature, index) => (
-                      <li key={index}>{feature}</li>
+                    {item.features?.slice(0, 3).map((item, index) => (
+                      <li key={index}>{item.feature}</li>
                     ))}
                   </ul>
                 </div>

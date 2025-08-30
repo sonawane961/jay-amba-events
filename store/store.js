@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
-import counterReducer from "./slices/counterSlice";
+import counterReducer from "./slices/cartslice";
 
 const makeStore = () =>
   configureStore({
@@ -8,4 +8,4 @@ const makeStore = () =>
       counter: counterReducer,
     },
   });
-export const wrapper = createWrapper(makeStore)
+export const wrapper = createWrapper(makeStore);
