@@ -61,20 +61,56 @@
 
 .packageCardContainer {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap onto the next line if they exceed the container's width */
-  gap: 10px; /* Adds space between items (you can adjust the value) */
-  justify-content: space-between; /* Distributes items with space between them */
-  align-items: flex-start; /* Aligns items at the start of the container's cross-axis */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 32px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @media (min-width: 1600px) {
+    gap: 28px;
+    padding: 48px 32px;
+    max-width: 1400px;
+  }
+  
+  @media (min-width: 1400px) and (max-width: 1599px) {
+    gap: 24px;
+    padding: 40px 24px;
+    max-width: 1300px;
+  }
+  
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    gap: 22px;
+    padding: 36px 20px;
+    max-width: 1200px;
+  }
+  
+  @media (max-width: 1199px) and (min-width: 901px) {
+    gap: 20px;
+    padding: 32px 16px;
+    max-width: 1000px;
+  }
+  
+  @media (max-width: 900px) {
+    gap: 18px;
+    padding: 28px 12px;
+  }
   
   @media (max-width: 768px) {
-    justify-content: center;
-    gap: 15px;
-    padding: 0 10px;
+    gap: 16px;
+    padding: 24px 8px;
+  }
+  
+  @media (max-width: 600px) {
+    gap: 14px;
+    padding: 20px 4px;
   }
   
   @media (max-width: 480px) {
-    gap: 10px;
-    padding: 0 5px;
+    gap: 12px;
+    padding: 16px 2px;
   }
 }
 

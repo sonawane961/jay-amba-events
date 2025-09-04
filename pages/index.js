@@ -13,49 +13,30 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const packageData = [
-    // {
-    //   imageSrc: "packageimages/1.png",
-    //   rating: 4,
-    //   title: "Unicorn Naming Ceremony Theme",
-    //   price: "129999/-",
-    // },
-    // {
-    //   imageSrc: "packageimages/1.png",
-    //   rating: 4,
-    //   title: "Unicorn Naming Ceremony Theme",
-    //   price: "129999/-",
-    // },
-    // {
-    //   imageSrc: "packageimages/1.png",
-    //   rating: 4,
-    //   title: "Unicorn Naming Ceremony Theme",
-    //   price: "129999/-",
-    // },
     {
-      imageSrc: "packageimages/baby_shower.png",
+      imageSrc: "/packageimages/baby_shower.png",
       rating: 4,
       title: "Baby Shower Theme",
-      price: "12999/-",
+      price: "₹12,999",
     },
     {
-      imageSrc: "packageimages/wedding.jpg",
+      imageSrc: "/packageimages/wedding.jpg",
+      rating: 5,
+      title: "Wedding Theme",
+      price: "₹45,999",
+    },
+    {
+      imageSrc: "/packageimages/bal.jpg",
       rating: 4,
-      title: "Unicorn wedding Theme",
-      price: "12999/-",
+      title: "Balloon Decoration",
+      price: "₹35,999",
     },
     {
-      imageSrc: "packageimages/bal.jpg",
-      rating: 4,
-      title: "balloon decoration Theme",
-      price: "12999/-",
-    },
-    {
-      imageSrc: "packageimages/birthday.jpg",
+      imageSrc: "/packageimages/birthday.jpg",
       rating: 4,
       title: "Birthday Theme",
-      price: "12999/-",
+      price: "₹25,999",
     },
-    // ... repeat or add more as needed
   ];
 
   const [carouselImageArray, setcarouselImageArray] = useState([]);
@@ -143,6 +124,20 @@ export default function Home() {
       </div>
       <hr className={styles.grayLine} />
       <p className={styles.eventHeading}> Our Packages</p>
+      <div className={styles.packageCardContainer}>
+        {packageData.map((pkg, idx) => (
+          <Packagecard
+            key={idx}
+            imageSrc={pkg.imageSrc}
+            title={pkg.title}
+            rating={pkg.rating}
+            price={pkg.price}
+          />
+        ))}
+      </div>
+
+      <hr className={styles.grayLine} />
+      <p className={styles.eventHeading}> Our Gallery</p>
       {loading ? (
         <div style={{ textAlign: "center", padding: "32px" }}>
           Loading images...
